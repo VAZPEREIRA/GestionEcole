@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+ layout:decorate="layout">
+<head>
+<meta charset="utf-8">
+<title>Saisie d'un eleve</title>
+</head>
+<body>
+<div layout:fragment="content1">
+<div class="col-md-6">
+<div class="panel panel-default">
+<div class="panel-heading">Nouveau Eleve</div>
+<div class="panel-body">
+<form th:action="@{/save}" method="post">
+ <div class="form-group">
+ <label class="control-label">Nom:</label>
+ <input class="form-control" type="text" name="nom" 
+ th:value="${eleve.nom}">
+
+ </div>
+ <div class="form-group">
+ <label class="control-label">Prenom:</label>
+ <input class="form-control" type="text" name="prenom"
+ th:value="${eleve.prenom}">
+
+ </div>
+ <div class="form-group">
+ <label class="control-label">DateNaissance:</label>
+ <input class="form-control" type="date" name="dateNaissance"
+ th:value="${eleve.dateNaissance}">
+ 
+ </div>
+  <div class="form-group">
+ <label class="control-label">Email:</label>
+ <input class="form-control" type="text" name="email"
+ th:value="${eleve.email}">
+ 
+ </div>
+  <div class="form-group">
+ <label class="control-label">Niveau:</label>
+ <input class="form-control" type="text" name="niveau"
+ th:value="${eleve.niveau}">
+ 
+ </div>
+ <button type="submit" class="btn btn-primary">Save</button>
+ </form>
+</div>
+</div>
+
+</div>
+ 
+</div>
+
+</body>
+</html>
