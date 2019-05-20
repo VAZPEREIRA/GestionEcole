@@ -26,7 +26,7 @@ public class EleveController {
 	@Autowired
 	private  EleveRepository eleveRepository;
 	//@RequestMapping(value="/index",method=RequestMethod.GET)
-	@GetMapping("/index")
+	@GetMapping("/user/index")
 	public String chercher(Model model,
 			@RequestParam(name="page", defaultValue="0") int p,
 			@RequestParam(name="size", defaultValue="5")int s,
@@ -42,21 +42,21 @@ public class EleveController {
 		model.addAttribute("motCle",mc);
 		return "eleves";
 	}
-	@GetMapping("/delete")
+	@GetMapping("/admin/delete")
 	public  String delete(Long id, int page, String motCle)  {
 		eleveRepository.deleteById(id);
-		return "redirect:/index?page="+page+"&motCle="+motCle;
+		return "redirect:/user/index?page="+page+"&motCle="+motCle;
 		
 	}
 
-	@GetMapping("/formEleve")
+	@GetMapping("/admin/formEleve")
 	public  String form(Model model)  {
 		model.addAttribute("eleve", new Eleve());
 		return "FormEleve";
 		
 	}
 	
-	@GetMapping("/edit")
+	@GetMapping("/admin/edit")
 	public  String edit(Model model, Long id)  {
 		Eleve eleve=eleveRepository.findById(id).get();
 		model.addAttribute("eleve",eleve);
@@ -64,11 +64,26 @@ public class EleveController {
 		
 	}
 	
-	@PostMapping("/save")
+	@PostMapping("/admin/save")
 	public  String save(Model model ,@Valid Eleve eleve, BindingResult bindingResult)  {
 		
 		eleveRepository.save(eleve);
-		return "redirect:/index";
+		return "redirect:/user/index";
 		
+	}
+	
+	@GetMapping("/")
+	public  String def()  {
+		return "redirect:/user/index";
+	}
+	
+	@GetMapping("/403")
+	public  String notAutorized()  {
+		return "403";
+	}
+	
+	@GetMapping("/login")
+	public  String login()  {
+		return "login";
 	}
 }

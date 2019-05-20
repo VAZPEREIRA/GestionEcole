@@ -15,16 +15,19 @@
       <a class="navbar-brand" href="#">GestionEleveApp</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a th:href="@{/index}">Home</a></li>
-      <li><a th:href="@{/formEleve}">Eleves</a></li>
+      <li class="active"><a th:href="@{/user/index}">Home</a></li>
+      <li><a th:href="@{/admin/formEleve}">Eleves</a></li>
       
+    </ul>
+    <ul class="nav navbar-nav pull-right">
+    <li><a  th:href="@{/login?logout}">Logout</a></li>
     </ul>
   </div>
 </nav>
 <section layout:fragment="content1">
 </section>
 <footer>
-<div></div>
+<!--  <div class="btn btn-primary">Copyright:2016   By VAZ Developper</div> -->
 </footer>
 </body>
 </html>
