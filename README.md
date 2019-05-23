@@ -1,3 +1,9 @@
+Nom: Vaz Pereira
+Prenom: Abdoul Khadre
+Email: doukon14@gmail.com
+Spécialisation: Developpent Web
+
+
 # GestionEcole
 Pour la  Sécurité de l'application:
 j'ai cree 2 comptes: Compte Utilisateur et Compte Administrateur
