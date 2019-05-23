@@ -27,6 +27,10 @@ Technologies Utilisées pour la Conception de l'application:
 JAVA/JEE
 Frameworks: Spring Boot, Spring MVC, Spring  DATA, JPA, Hibernate
 
+La couche Web: basée sur MVC coté Serveur en utilisant Thymeleaf
+
+La Sécurité : est basée sur Spring Sécurity
+
 Base de Donnée:
 --------------
 MYSQL
